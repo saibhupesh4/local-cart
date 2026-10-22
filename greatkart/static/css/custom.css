@@ -1,0 +1,90 @@
+/* Hide Radio button */
+.rate > input{
+  display: none;
+}
+
+.rate{
+  display: inline-block;;
+  border: 0;
+}
+
+.rate > label{
+  float: right;
+}
+
+/* Showing the stars */
+.rate > label:before{
+  display: inline-block;
+  font-size: 1.1rem;
+  font-family: FontAwesome;
+  content: "\f005";
+  margin:0;
+  padding:0.3rem .2rem;
+  cursor: pointer;
+}
+
+/* Half star */
+.rate .half:before{
+  content: "\f089";
+  position: absolute;
+  padding-right: 0;
+}
+
+/* Click and hover */
+input:checked ~ label, label:hover ~ label{
+  color: #ffb503;
+}
+
+/* hover hightlight */
+input:checked + label:hover, input:checked ~ label:hover,input:checked ~ label:hover ~ label,
+label:hover ~ input:checked ~ label{
+  color: #cc9000;
+}
+
+.rating-star i{
+  color: #ffb503 !important;
+}
+
+/* Theme variables cover the shared shell and the legacy Bootstrap surfaces. */
+:root { color-scheme: light; --page-bg:#fff; --page-text:#212529; --surface:#fff; --line:#dee2e6; }
+:root[data-theme="dark"] { color-scheme: dark; --page-bg:#171a21; --page-text:#e7eaf0; --surface:#222733; --line:#3a4250; }
+html, body { background:var(--page-bg); color:var(--page-text); }
+body, .card, .dropdown-menu, .modal-content, .list-group-item, .table,
+.header-main, .section-footer, .bg-white, .form-control, .custom-select {
+  background-color:var(--surface); color:var(--page-text); border-color:var(--line);
+}
+:root[data-theme="dark"] .text-dark, :root[data-theme="dark"] a:not(.btn):not(.dropdown-item) { color:#a9c5ff; }
+:root[data-theme="dark"] .text-muted, :root[data-theme="dark"] small { color:#b7becb !important; }
+:root[data-theme="dark"] .form-control::placeholder { color:#aab2c0; }
+:root[data-theme="dark"] .btn-outline-secondary { color:#e7eaf0; border-color:#8b95a5; }
+:root[data-theme="dark"] :focus-visible { outline:3px solid #8bb4ff; outline-offset:2px; }
+
+/* Separate the search row from the logo and navigation on compact layouts. */
+.header-search-column { padding-top: 0.75rem; }
+
+ul.thumb{
+  margin:0 auto;
+  padding: 0;
+  float: left;
+}
+ul.thumb li{
+  list-style: none;
+  margin: 10px;
+}
+ul.thumb li img{
+  width: 80px;
+  height: 80px;
+  border: 1px solid grey;
+}
+
+@media (max-width: 575.98px) {
+  .invoice-container {
+    padding: 18px 12px !important;
+    margin-top: 20px !important;
+    margin-bottom: 20px !important;
+  }
+
+  .invoice-from ul {
+    text-align: left !important;
+  }
+}
